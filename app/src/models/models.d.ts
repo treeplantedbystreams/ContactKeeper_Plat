@@ -1,7 +1,7 @@
 
 declare module models {
     interface IBlogPost {
-        name: string;
+        title: string;
         phone: string;
         email: string;
         college: string;

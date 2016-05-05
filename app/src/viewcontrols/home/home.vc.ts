@@ -9,7 +9,7 @@ export default class HomeViewControl extends BaseViewControl {
     context = {
         posts: <Array<models.IBlogPost>>[],
         composeView: HomeViewControl,
-        name: '',
+        title: '',
         phone: '',
         email: '',
         college: '',
@@ -23,7 +23,7 @@ export default class HomeViewControl extends BaseViewControl {
     submit(): void {
         console.log('submitting blog post!');
         let blogPost: models.IBlogPost = {
-            name: this.context.name,
+            title: this.context.title,
             phone: this.context.phone,
             email: this.context.email,
             college: this.context.college

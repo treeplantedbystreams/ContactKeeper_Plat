@@ -33,7 +33,8 @@ export default class PostService extends BaseService {
             url: this.host + '/posts',
             data: blogPost
         }).then((success) => {
-            return success.response;
+            // console.log("success")
+            return success.response          
         }, (err) => {
             console.log(err);
             throw err;
