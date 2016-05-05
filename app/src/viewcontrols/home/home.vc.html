@@ -1,0 +1,34 @@
+<h1>Welcome to contactkeeper!</h1>
+<input type="text">
+<plat-button>Look for contacts</plat-button>
+
+
+<!--<plat-resources>
+    <injectable alias="formatter">formatter</injectable>
+</plat-resources>    -->
+<ul plat-control="plat-foreach" plat-context="friends">
+    <!--@context is the current context,-->
+    <!--@first is true/false depending on if this is the first entry in the array-->
+    <!--@last ...-->
+    <!--@even is true/false depending on if we are in an even index of the array-->
+    <!--@odd ...-->
+    <!--@index is the numeric value for the current index of the array-->
+    <li>{{@context}}: first?: {{@first}}, last?: {{@last}}, even?: {{@even}}, odd?: {{@odd}}, index: {{@index}}</li>
+</ul>
+<plat-button class="button-primary button-jumbo" plat-tap="goToCompose()">Compose</plat-button>
+<p>Alternatively, <plat-link plat-options="{ view: composeView }">click here</plat-link> to compose a new post.</p>
+<plat-foreach class="post-list" plat-context="posts">
+    <div class="post">
+        <h5>{{name}}</h5>
+        <h5>{{phone}}</h5>
+        <h5>{{email}}</h5>
+        <h5>{{college}}</h5>
+    </div>
+</plat-foreach>
+
+<h1>Compose</h1>
+<plat-input type="text" placeholder="name" plat-bind="name"></plat-input>
+<plat-input type="text" placeholder="phone number" plat-bind="phone"></plat-input>
+<plat-input type="text" placeholder="Email" plat-bind="email"></plat-input>
+<plat-input type="text" placeholder="college" plat-bind="college"></plat-input>
+<plat-button plat-tap="submit()">Submit Post</plat-button>
